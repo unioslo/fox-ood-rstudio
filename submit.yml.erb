@@ -1,0 +1,19 @@
+batch_connect:
+  template: "basic"
+  conn_params:
+          - csrf_token
+
+script:
+  native: [
+            "-c", "<%= ec_cpus.blank?  ? 1 : ec_cpus.to_i %>",
+              <%- if ec_gpus.to_i > 0 -%>
+                "-G", "<%= ec_gpus.to_i %>",
+                "--partition=accel",
+            <%- else -%>
+	        "--partition=normal",
+            <%- end -%>
+            <%- if not ec_mem.blank? -%>
+                "--mem", "<%= ec_mem.to_i %>G"
+            <%- end -%>
+
+          ]

@@ -1,0 +1,13 @@
+---
+name: RStudio Server
+category: Interactive Apps
+subcategory: RStudio
+role: batch_connect
+description: |
+  RStudio Server is an IDE for [R].
+
+  <small>
+  This is the new implementation of RStudio Server on Fox. Unlike the previous version, it does not use a container but instead relies on the globally installed versions of R and packages.
+  </small>
+tile:
+        sub_caption: "An IDE for R"
