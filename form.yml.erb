@@ -15,61 +15,13 @@ attributes:
 
   auto_modules_R:
     default: false
+
   auto_accounts:
           label: "Choose the Educloud project:"
           help: |
                   <small>If you are unsure, ask the project principal</small>
-  ec_alacarte:
-          label: "Choose resources:"
-          widget: "select"
-          required: "true"
-          options:
-                  - 
-                    [
-                            "Small (8 cores, 16GB RAM)", "small",
-                            data-set-ec-cpus: "8",
-                            data-set-ec-mem: "16",
-                            data-set-ec-gpus: "0",
-                            data-hide-ec-cpus: "true",
-                            data-hide-ec-gpus: "true",
-                            data-hide-ec-mem: "true",
-                    ]
-                  - 
-                    [
-                            "Medium 16 cores, 32GB RAM)", "medium",
-                            data-set-ec-cpus: "16",
-                            data-set-ec-mem: "32",
-                            data-set-ec-gpus: "0",
-                            data-hide-ec-cpus: "true",
-                            data-hide-ec-gpus: "true",
-                            data-hide-ec-mem: "true",
-                    ]
-                  - 
-                    [
-                            "Large (32 cores, 64GB RAM)", "large",
-                            data-set-ec-cpus: "32",
-                            data-set-ec-mem: "64",
-                            data-set-ec-gpus: "0",
-                            data-hide-ec-cpus: "true",
-                            data-hide-ec-gpus: "true",
-                            data-hide-ec-mem: "true",
-                    ]
-                  - 
-                    [
-                            "GPU (1x A100, 24 cores, 256GB RAM)", "gpu",
-                            data-set-ec-cpus: "24",
-                            data-set-ec-mem: "256",
-                            data-set-ec-gpus: "1",
-                            data-hide-ec-cpus: "true",
-                            data-hide-ec-gpus: "true",
-                            data-hide-ec-mem: "true",
-                    ]
-                  - 
-                    [
-                          "Advanced (Choose resources manually)", "advanced",
-                          data-set-ec-cpus: "1",
-                          data-set-ec-mem: "1",
-                    ]
+
+<%= FormTemplate.fox_alacarte %>
 
   ec_cpus:
     label: "Number of CPU cores:"
