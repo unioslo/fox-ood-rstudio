@@ -30,6 +30,11 @@ umask 077
 sed 's/^ \{2\}//' > "${RSESSION_WRAPPER_FILE}" << EOL
   #!/usr/bin/env bash
 
+  # Configure proxy
+  export http_proxy="http://10.110.0.12:3128/"
+  export https_proxy="http://10.110.0.12:3128/"
+  export no_proxy=".fox"
+
   # Log all output from this script
   export RSESSION_LOG_FILE="${PWD}/rsession.log"
   exec &>>"\${RSESSION_LOG_FILE}"
